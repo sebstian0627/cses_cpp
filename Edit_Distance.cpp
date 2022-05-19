@@ -4,9 +4,9 @@
 #define vi vector<int>
 #define F(i,n) for(int i=0;i<(int)n;i++)
 #define pb push_back
-#define pii pair<int,int>
 #define x first
 #define y second
+#define pii pair<int,int>
 #define print(x) cout << x << endl;
 #define print_array(arr) F(i, arr.size()){cout << arr[i] << "-";}cout << endl;
 #define print_line F(i, 60){cout << "--";}cout << endl;
@@ -17,10 +17,31 @@ void pre(){
 
 }
 void solve(){
-    int n;cin >> n;
-    int m;cin>>m;
-    vector<vector<char>> v(n, vector<char>(m,'.'));
-    pii
+    // int n;cin >> n;
+    string a,b;
+    cin>>a>>b;
+    int n=a.size();
+    int m = b.size();
+
+    vector<vector<int>> dp(n+1, vector<int>(m+1,0));
+    for(int i=0;i<=n;i++){
+        dp[i][0]=i;
+    }
+    for(int j=0;j<=m;j++){
+        dp[0][j]=j;
+    }
+
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            if(a[i-1]==b[j-1]){
+                dp[i][j]=dp[i-1][j-1];
+            }else{
+                dp[i][j]=1+min(dp[i-1][j],min(dp[i-1][j-1],dp[i][j-1]));
+            }
+        }
+    }
+    cout<<dp[n][m]<<endl;
+
 
 
 }

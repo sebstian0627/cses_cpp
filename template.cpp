@@ -6,6 +6,7 @@
 #define pb push_back
 #define x first
 #define y second
+#define pii pair<int,int>
 #define print(x) cout << x << endl;
 #define print_array(arr) F(i, arr.size()){cout << arr[i] << "-";}cout << endl;
 #define print_line F(i, 60){cout << "--";}cout << endl;
