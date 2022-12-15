@@ -79,7 +79,7 @@ void solve(){
     vector<int> visited(n,0);
     cout<< max(update(0,-1,0,visited, adj, dp), update(0,-1,1,visited, adj, dp));
     
-
+cout<<"This is just to check github workiings..."<<endl;
 }
 int main(int argc, char const *argv[])
 {   
