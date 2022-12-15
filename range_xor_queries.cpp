@@ -8,7 +8,7 @@
 #define y second
 #define pii pair<int,int>
 #define print(x) cout << x << endl;
-#define print_array(arr) F(i, arr.size()){cout << arr[i] << "-";}cout << endl;
+#define pr  int_array(arr) F(i, arr.size()){cout << arr[i] << "-";}cout << endl;
 #define print_line F(i, 60){cout << "--";}cout << endl;
 const int mod = 1e9+7;
 using namespace std;
@@ -19,6 +19,7 @@ void build(const vector<long long int> &arr, int low, int high, int pos){
         seg_tree[pos]=arr[low];
         return;
     }
+    
     int mid = (high+low)/2;
     build(arr, low, mid, 2*pos+1);
     build(arr, mid+1,high, 2*pos+2);
